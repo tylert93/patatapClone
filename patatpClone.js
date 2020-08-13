@@ -1,6 +1,6 @@
-var circles = [];
+let circles = [];
 // assign a colour and a sound to each letter    
-var keyData = {
+const keyData = {
     q: {
         sound: new Howl({
             src: ['../../assets/original/sounds/bubbles.mp3']
@@ -163,11 +163,11 @@ function onKeyDown(event){
     // verify that a letter key was pressed
     if(keyData[event.key]){
         // generate a random point within the viewport
-        var maxPoint = new Point(view.size.width - 100, view.size.height - 100);
-        var randomPoint = Point.random();
-        var point = maxPoint * randomPoint;
+        let maxPoint = new Point(view.size.width - 100, view.size.height - 100),
+            randomPoint = Point.random(),
+            point = maxPoint * randomPoint;
         // animate a circle whose centre is at this random point
-        var newCircle = new Path.Circle(point, 200);
+        let newCircle = new Path.Circle(point, 200);
         // add this new circle to the circles array
         circles.push(newCircle);
         // fetch the corrsponding colour and sound for the particular key which was pressed
